@@ -5,6 +5,7 @@ from fastapi import APIRouter, Path, HTTPException
 from dependency_injector.wiring import inject, Provide
 
 from app.services.widget_service.widget_service import WidgetService
+from app.services.widget_service.exceptions import WidgetNotFoundError
 
 router = APIRouter()
 
@@ -15,8 +16,8 @@ def execute(command: str, *args, service: WidgetService = Provide['widget_servic
 
     try:
         return method(*args, **kwargs)
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e)) from e
+    except WidgetNotFoundError as e:
+        raise HTTPException(status_code=404, detail=str(e)) from e
 
 @router.get("/widgets")
 def list_widgets():
