@@ -4,6 +4,8 @@
 
 Copy-paste the `.env.example` file to `.env` and fill the required information.
 
+You need to run this service if you choose the `bucket` provider : [Bucket Service](https://github.com/diogof648-dev/bi-bucketservice/tree/develop) (Please refer to the project's README to run it)
+
 ## Installation DEV
 ```bash
 python -m venv .venv
@@ -24,6 +26,13 @@ pip install -r requirements/prod.txt
 ```bash
 python -m pytest
 ```
+
+### Coverage
+```
+python -m pytest --cov
+```
+You can visually see the coverage after typing the command using [this extension](https://marketplace.visualstudio.com/items?itemName=markis.code-coverage) on Visual Studio Code.
+
 
 ## Run
 
