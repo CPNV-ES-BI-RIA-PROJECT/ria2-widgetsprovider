@@ -31,7 +31,7 @@ python -m pytest
 ```
 python -m pytest --cov
 ```
-You can visually see the coverage after typing the command using [this extension](https://marketplace.visualstudio.com/items?itemName=markis.code-coverage) on Visual Studio Code.
+You can visually see the coverage (after typing the command above) using [this extension](https://marketplace.visualstudio.com/items?itemName=markis.code-coverage) on Visual Studio Code.
 
 
 ## Run
