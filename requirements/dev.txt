@@ -1,0 +1,5 @@
+-r prod.txt
+pylint==4.0.3
+pytest==9.0.1
+pytest-mock==3.15.1
+pytest-cov==4.1.0
