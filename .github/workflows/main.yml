@@ -53,4 +53,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ghcr.io/cpnv-es-bi-ria-project/widgetsprovider:${{ steps.image-tag.outputs.tag }}
+          tags: ghcr.io/cpnv-es-bi-ria-project/${{ vars.IMAGE_NAME }}:${{ steps.image-tag.outputs.tag }}
