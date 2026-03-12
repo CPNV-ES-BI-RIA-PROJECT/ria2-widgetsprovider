@@ -1,1 +1,4 @@
 fastapi[standard]==0.122.0
+requests==2.32.5
+dependency-injector==4.48.3
+pydantic2==1.1.15

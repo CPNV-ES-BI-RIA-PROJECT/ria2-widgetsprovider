@@ -1,0 +1,5 @@
+[MAIN]
+extension-pkg-allow-list=dependency_injector
+
+[TYPECHECK]
+generated-members=wire
