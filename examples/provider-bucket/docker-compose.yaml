@@ -1,0 +1,26 @@
+services:
+  widget-provider:
+    image: ghcr.io/cpnv-es-bi-ria-project/widgetsprovider:latest
+    ports:
+      - "8000:8000"
+    environment:
+      - WIDGET_PROVIDER=bucket
+      - PROVIDER_BUCKET_NAME=
+      - PROVIDER_BUCKET_SERVICE_URL=http://bucket-service:8080
+    networks:
+      - widget-provider
+    restart: always
+
+  bucket-service:
+    image: docker.io/diogof648/ria2-bucketservice:latest
+    environment:
+      - PROVIDER=aws
+      - AWS_ACCESS_KEY_ID=
+      - AWS_SECRET_ACCESS_KEY=
+    networks:
+      - widget-provider
+    restart: always
+
+networks:
+  widget-provider:
+    driver: bridge

@@ -1,0 +1,10 @@
+services:
+  widget-provider:
+    image: ghcr.io/cpnv-es-bi-ria-project/widgetsprovider:latest
+    ports:
+      - "8000:8000"
+    environment:
+      - WIDGET_PROVIDER=metabase
+      - PROVIDER_METABASE_SERVICE_URL=
+      - PROVIDER_METABASE_API_KEY=
+    restart: always
