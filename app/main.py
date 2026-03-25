@@ -6,9 +6,10 @@ from fastapi import FastAPI
 from app.config.container import Container
 from app.controllers import widgets_controller
 from app.services.widget_service.models import bucket_widget_provider
+from app.services.widget_service.models import metabase_widget_provider
 
 container = Container()
-container.wire(modules=[widgets_controller, bucket_widget_provider])
+container.wire(modules=[widgets_controller, bucket_widget_provider, metabase_widget_provider])
 
 app = FastAPI()
 load_dotenv()
