@@ -18,7 +18,8 @@ class MetabaseWidgetProvider(WidgetProviderInterface):
         """List all available metabase widgets."""
         response = self._client.get(
             f"{self._url}/api/card",
-            timeout=20
+            timeout=20,
+            headers={"X-API-Key": os.getenv("PROVIDER_METABASE_API_KEY")},
         )
 
         return {obj.get("id"): obj.get("name") for obj in response.json()}
@@ -27,7 +28,8 @@ class MetabaseWidgetProvider(WidgetProviderInterface):
         """Get the public link of a metabase widget by its id."""
         response = self._client.post(
             f"{self._url}/api/card/{widget_id}/public_link",
-            timeout=20
+            timeout=20,
+            headers={"X-API-Key": os.getenv("PROVIDER_METABASE_API_KEY")},
         )
 
         if response.status_code == 404:
