@@ -37,7 +37,7 @@ jobs:
           if [ "${GITHUB_REF##*/}" = "main" ]; then
             echo "tag=latest" >> "$GITHUB_OUTPUT"
           else
-            echo "tag=test" >> "$GITHUB_OUTPUT"
+            echo "tag=stage" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Log in to GHCR
