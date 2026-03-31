@@ -1,10 +1,6 @@
 name: CI
 
-on:
-  push:
-    branches:
-      - main
-      - develop
+on: push
 
 jobs:
   test:
@@ -36,8 +32,10 @@ jobs:
         run: |
           if [ "${GITHUB_REF##*/}" = "main" ]; then
             echo "tag=latest" >> "$GITHUB_OUTPUT"
-          else
+          elif [ "${GITHUB_REF##*/}" = "develop" ]; then
             echo "tag=stage" >> "$GITHUB_OUTPUT"
+          else
+            echo "tag=dev" >> "$GITHUB_OUTPUT"
           fi
 
       - name: Log in to GHCR
