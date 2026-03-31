@@ -31,7 +31,7 @@ jobs:
         id: image-tag
         run: |
           if [ "${GITHUB_REF##*/}" = "main" ]; then
-            echo "tag=latest" >> "$GITHUB_OUTPUT"
+            echo "tag=prod" >> "$GITHUB_OUTPUT"
           elif [ "${GITHUB_REF##*/}" = "develop" ]; then
             echo "tag=stage" >> "$GITHUB_OUTPUT"
           else
